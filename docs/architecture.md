@@ -158,3 +158,26 @@ Perform integration and system testing.
 
 Phase 7:
 Complete documentation and final demonstration.
+
+## Git Branching Strategy
+
+The main branch contains stable project versions.
+
+Feature branches will be used for major development tasks such as:
+
+- Linux device driver
+- Driver integration
+- Testing and improvements
+
+Completed features will be tested before being merged into the main branch.
+
+## Stage 4 Implementation Plan
+
+1. Create the Linux character-device driver.
+2. Compile the driver using the Linux kernel build system.
+3. Load and test the kernel module.
+4. Create and verify the ATM device interface.
+5. Test read/write communication.
+6. Add communication between the C++ ATM application and the driver.
+7. Integrate the driver with the ATM transaction workflow.
+8. Test the complete prototype.
