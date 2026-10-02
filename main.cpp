@@ -6,12 +6,35 @@
 #include <iomanip>
 #include <ctime>
 #include <limits>
+#include <fcntl.h>
+#include <unistd.h>
+#include <cstring>
 
 #ifdef __linux__
 #include <sys/utsname.h>
 #endif
 
 using namespace std;
+
+void sendToATMDriver(const char* message)
+{
+    int fd = open("/dev/atm_device", O_WRONLY);
+
+    if (fd < 0)
+    {
+        perror("Failed to open ATM device");
+        return;
+    }
+
+    ssize_t result = write(fd, message, strlen(message));
+
+    if (result < 0)
+    {
+        perror("Failed to write to ATM driver");
+    }
+
+    close(fd);
+}
 
 // Account Class
 
@@ -340,6 +363,7 @@ public:
         saveAccounts();
 
         cout << "\nDeposit successful.\n";
+        sendToATMDriver("DEPOSIT");
 
         cout << "New Balance: Rs. "
              << fixed
@@ -401,6 +425,7 @@ public:
              << setprecision(2)
              << currentAccount->getBalance()
              << "\n";
+       sendToATMDriver("WITHDRAW");
     }
 
     // Change PIN

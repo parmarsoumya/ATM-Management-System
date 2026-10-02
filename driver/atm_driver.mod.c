@@ -18,28 +18,55 @@ __section(".gnu.linkonce.this_module") = {
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0xd272d446, "__x86_return_thunk" },
+	{ 0x45d300cd, "cdev_add" },
+	{ 0x0bc5fb0d, "unregister_chrdev_region" },
+	{ 0xfad798b2, "class_create" },
+	{ 0x73634a54, "cdev_del" },
+	{ 0x02106a3d, "device_create" },
+	{ 0xd7442be0, "class_destroy" },
+	{ 0x408a0738, "device_destroy" },
 	{ 0xd272d446, "__fentry__" },
 	{ 0xe8213e80, "_printk" },
+	{ 0xd272d446, "__x86_return_thunk" },
+	{ 0x9f222e1e, "alloc_chrdev_region" },
+	{ 0xd9324140, "cdev_init" },
 	{ 0xe9196a28, "module_layout" },
 };
 
 static const u32 ____version_ext_crcs[]
 __used __section("__version_ext_crcs") = {
-	0xd272d446,
+	0x45d300cd,
+	0x0bc5fb0d,
+	0xfad798b2,
+	0x73634a54,
+	0x02106a3d,
+	0xd7442be0,
+	0x408a0738,
 	0xd272d446,
 	0xe8213e80,
+	0xd272d446,
+	0x9f222e1e,
+	0xd9324140,
 	0xe9196a28,
 };
 static const char ____version_ext_names[]
 __used __section("__version_ext_names") =
-	"__x86_return_thunk\0"
+	"cdev_add\0"
+	"unregister_chrdev_region\0"
+	"class_create\0"
+	"cdev_del\0"
+	"device_create\0"
+	"class_destroy\0"
+	"device_destroy\0"
 	"__fentry__\0"
 	"_printk\0"
+	"__x86_return_thunk\0"
+	"alloc_chrdev_region\0"
+	"cdev_init\0"
 	"module_layout\0"
 ;
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "F749B4AE9BE5E1BFDEF2BCB");
+MODULE_INFO(srcversion, "3F613D2316430250CC6FF85");
